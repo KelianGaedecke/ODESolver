@@ -15,10 +15,10 @@ int main(){
     Verlet v_solv ;
 
     printf("Using Runge-Kutta method: \n");
-    rk_solv.solve(y0,t0,tf,dt);
+    rk_solv.solve(examplefunction,y0,t0,tf,dt);
 
     printf("Using Verlet method: \n");
-    v_solv.solve(y0,t0,tf,dt);  
+    v_solv.solve(examplefunction,y0,t0,tf,dt);  
 
     return 0;
 }

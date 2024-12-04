@@ -3,14 +3,14 @@
 #include <fstream>   
 #include <iostream> 
 
-void RK4(std::function<double(double, double)> f, double y0, double t0, double tf, double dt) {
+void RK4::solve(std::function<double(double, double)> f, double y0, double t0, double tf, double dt) {
     double t = t0;
     double y = y0;
 
     if (dt <= 0) {
         throw std::runtime_error("dt must be bigger than 0");
     }
-    printf("Let's use RK4 method to solve this!")
+    printf("Let's use RK4 method to solve this!");
 
     std::ofstream outFile("RK4.out");
     if (!outFile.is_open()) {
@@ -35,7 +35,7 @@ void RK4(std::function<double(double, double)> f, double y0, double t0, double t
 }
 
 // Verlet Method
-void Verlet(std::function<double(double, double)> f, double y0, double t0, double tf, double dt) {
+void Verlet::solve(std::function<double(double, double)> f, double y0, double t0, double tf, double dt) {
     double t = t0;
     double y_prev = y0;
     double y = y0;
@@ -44,7 +44,7 @@ void Verlet(std::function<double(double, double)> f, double y0, double t0, doubl
     if (dt <= 0) {
         throw std::runtime_error("dt must be bigger than 0");
     }
-    printf("Let's use Verlet method to solve this!")
+    printf("Let's use Verlet method to solve this!");
 
     std::ofstream outFile("Verlet.out"); 
     if (!outFile.is_open()) {
